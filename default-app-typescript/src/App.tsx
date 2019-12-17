@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Person from './components/person';
+import UserInput from './components/userInput';
+import UserOutput from './components/userOutput';
 import './App.css';
 
 const App: React.FC = () => {
@@ -11,6 +13,10 @@ const App: React.FC = () => {
     ],
   });
 
+  const [userState, setUserState] = useState({
+    userName: 'Edfcsx',
+  });
+
   const switchNameHandler = () => {
     setPersonsState({
       ...personsState,
@@ -20,6 +26,10 @@ const App: React.FC = () => {
         { id: 3, name: 'Stephanie', age: 27 },
       ],
     });
+  };
+
+  const userChangeHandler = (event: any) => {
+    setUserState({ userName: event.target.value });
   };
 
   const nameChangeHandler = (event: any) => {
@@ -67,6 +77,17 @@ const App: React.FC = () => {
           />
         ))
       }
+
+      <hr />
+      <h4>A example for finish module</h4>
+      <br />
+
+      <UserInput change={userChangeHandler} userName={userState.userName} />
+      <div className="userOutputContainer">
+        <UserOutput userName={userState.userName} />
+        <UserOutput userName={userState.userName} />
+        <UserOutput userName="Felipe!" />
+      </div>
     </div>
   );
 };
