@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 import './person.css';
 
 interface InputProps {
@@ -14,14 +15,19 @@ const Person: React.FC<InputProps> = (props: InputProps) => {
     name,
     age,
     change,
+    click,
   } = props;
 
+  const style = {
+  };
+
   return (
-    <div className="person">
+    <div className="person" style={style}>
+      <button onClick={click} type="button" className="btn-exclude">x</button>
       <p>{`i'm ${name} have a ${age} years old!`}</p>
-      <input type="text" id={name} onChange={change} value={name} />
+      <input type="text" id={name} onChange={change} value={name} className="input-text" />
     </div>
   );
 };
 
-export default Person;
+export default Radium(Person);

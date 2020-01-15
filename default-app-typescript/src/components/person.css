@@ -1,8 +1,25 @@
 .person {
+  display: flex;
+  flex-flow: column nowrap;
   width: 60%;
   margin: 16px auto;
   border: 1px solid black;
   box-shadow: 0 2px 3px #ccc;
   padding: 16px;
   text-align: center;
+}
+
+@media (min-width: 500px) {
+  .person {
+    width: 450px;
+  }
+}
+
+.btn-exclude {
+  align-self: flex-end;
+}
+
+.input-text {
+  width: 50%;
+  align-self: center;
 }

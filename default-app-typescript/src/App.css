@@ -27,3 +27,33 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.header-btn-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 2px solid salmon;
+  padding: 16px;
+  margin-bottom: 50px;
+}
+
+.header-btn-container button {
+  margin: 5px;
+}
+
+.switchNameButton {
+  background-color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+}
